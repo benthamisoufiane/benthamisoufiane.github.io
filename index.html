@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Soufiane Benthami • Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    :root{
+      /* Thème clair professionnel (gris → blanc cassé → bleu ciel) */
+      --bg:linear-gradient(135deg,#f5f7fa,#eef2f7,#dce9f9);
+      --bg-soft:rgba(255,255,255,0.7);
+      --primary:#1f3c88;
+      --primary-2:#3a6ea5;
+      --text:#1e293b;
+      --muted:#475569;
+      --card:rgba(255,255,255,0.98);
+      --chip:#e2e8f0;
+      --shadow: 0 6px 20px rgba(0,0,0,.08);
+      --radius: 18px;
+      --radius-sm: 12px;
+      --maxw: 1100px;
+      --sticky-top: 12px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+      background: var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+
+    .wrap{max-width:var(--maxw); margin:0 auto; padding:28px 20px 64px}
+
+    header{
+      position:sticky; top:var(--sticky-top); z-index:30;
+      display:flex; align-items:center; gap:22px; flex-wrap:wrap;
+      background: var(--card);
+      border:1px solid #cbd5e1;
+      border-radius:var(--radius);
+      padding:24px;
+      box-shadow:var(--shadow);
+      backdrop-filter: blur(6px);
+    }
+
+    .avatar img{ width:86px; height:86px; border-radius:20px; object-fit:cover; }
+
+    h1{font-size:28px; line-height:1.2; margin:0}
+    .subtitle{color:var(--primary-2); font-weight:600; margin-top:6px}
+
+    .contact{margin-left:auto; display:flex; flex-wrap:wrap; gap:10px}
+    .chip{ display:inline-flex; align-items:center; gap:8px; padding:10px 12px;
+      background:var(--chip); color:var(--text); border:1px solid #cbd5e1; border-radius:999px; text-decoration:none; font-size:14px;
+      transition:transform .15s ease, background .15s ease; cursor:pointer;}
+    .chip:hover{transform:translateY(-2px); background:#cbd5e1}
+
+    .menubar{ position:sticky; top:calc(var(--sticky-top) + 110px); z-index:20; margin-top:14px; display:flex; flex-wrap:wrap; gap:8px;
+      background:#f1f5f9; border:1px solid #cbd5e1; border-radius:999px; padding:8px; box-shadow:var(--shadow); }
+    .menubar a{ padding:8px 12px; border-radius:999px; text-decoration:none; color:var(--primary); border:1px solid transparent}
+    .menubar a:hover{ border-color: var(--primary-2)}
+
+    main{display:grid; grid-template-columns: 340px 1fr; gap:22px; margin-top:22px}
+    @media (max-width: 980px){main{grid-template-columns:1fr}}
+
+    .card{ background: var(--card); border:1px solid #cbd5e1; border-radius:var(--radius); padding:22px; box-shadow: var(--shadow); scroll-margin-top: 160px; }
+    .card h2{margin:0 0 14px; font-size:18px; letter-spacing:.3px; color:var(--primary)}
+    .muted{color:var(--muted)}
+    .list{margin:0; padding-left:18px}
+    .list li{margin:6px 0}
+
+    .grid-2{display:grid; grid-template-columns:1fr; gap:22px}
+
+    .timeline{display:flex; flex-direction:column; gap:16px}
+    .item{padding:16px; background:var(--bg-soft); border:1px solid #cbd5e1; border-radius:var(--radius-sm)}
+    .item .role{font-weight:700}
+    .item .where{color:var(--primary-2)}
+    .pill{display:inline-flex; gap:8px; flex-wrap:wrap; margin-top:10px}
+    .pill span{background:#f1f5f9; border:1px solid #cbd5e1; padding:6px 10px; border-radius:999px; font-size:12px}
+
+    .cols{columns:2; column-gap:18px}
+    @media (max-width:700px){.cols{columns:1}}
+
+    footer{margin-top:26px; text-align:center; color:var(--muted)}
+    footer a{color:var(--primary-2); text-decoration:none}
+
+    /* Images de projets */
+    .proj-img{ width:100%; border-radius:12px; margin-top:10px; display:block; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <!-- Header -->
+    <header>
+      <div class="avatar"><img src="Benthamisoufiane.png" alt="Soufiane Benthami"/></div>
+      <div>
+        <h1>Soufiane Benthami</h1>
+        <div class="subtitle">Consultant Technico‑Fonctionnel GraphTalk AIA</div>
+      </div>
+      <nav class="contact" aria-label="Contacts">
+        <a class="chip" href="tel:+212613478423" title="Appeler"><i class="fa-solid fa-phone">  </i name="Télephone"> +212 6 13 47 84 23</a>
+        <a id="emailLink" class="chip" href="mailto:benthamisoufiane1986@gmail.com?subject=Contact%20depuis%20Portfolio" title="Écrire un email"><i class="fa-solid fa-envelope"></i> Email</a>
+        <a class="chip" href="https://linkedin.com/in/soufiane-benthami" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+        <span class="chip" title="Localisation"><i class="fa-solid fa-location-dot"></i> Rabat, Maroc</span>
+      </nav>
+    </header>
+
+    <!-- Menu -->
+    <nav class="menubar" aria-label="Navigation interne">
+      <a href="#profil">Profil</a>
+      <a href="#competences">Compétences</a>
+      <a href="#experiences">Expériences</a>
+      <a href="#projets">Projets</a>
+      <a href="#formation">Formation</a>
+      <a href="#certifs">Certifications</a>
+      <a href="#langues">Langues</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <main>
+      <!-- Colonne gauche -->
+      <aside class="grid-2">
+        <section id="profil" class="card">
+          <h2>Profil</h2>
+          <p>Consultant technico‑fonctionnel avec <strong>7 ans d’expérience</strong>, spécialisé dans <strong>Graphtalk AIA</strong> et les systèmes ERP, intervenant dans les domaines Assurance (Vie & Non-Vie), Épargne, Retraite et Télécom.</p>
+        </section>
+
+        <section id="competences" class="card">
+          <h2>Compétences techniques & fonctionnelles</h2>
+          <ul class="list">
+            <li><strong>Langages :</strong> C, C++, C#, GraphTalk, Java, VB .NET, Java Swing</li>
+            <li><strong>Web & Frameworks :</strong> HTML5, CSS3, PHP5, Spring, ASP.NET, Struts2, jQuery</li>
+            <li><strong>Bases de données :</strong> Oracle, SQL, PL/SQL, SQL Server, JPA, Hibernate</li>
+            <li><strong>ERP & Développement :</strong> Graphtalk AIA (v3.00, v5.00, v21.3.00, v25.1.00), Scripts, Batch, Webservices REST/SOAP</li>
+            <li><strong>Tests & Automatisation :</strong> Selenium, Virtuoso, Postman, HP ALM</li>
+            <li><strong>CI/CD & Agilité :</strong> Jira, Xray, Trello, Confluence, GitHub</li>
+            <li><strong>Fonctionnel :</strong> TMA, gestion des incidents, maintenance corrective/évolutive, optimisation des performances, rédaction des spécifications, support & formation</li>
+            <li><strong>Gestion de projet :</strong> Agile (Scrum, Kanban), Cycle en V, pilotage planning, suivi des livrables, coordination d’équipes</li>
+            <li><strong>Outils de pilotage :</strong> Jira, Trello, MS Project, Confluence</li>
+          </ul>
+        </section>
+
+        <section id="langues" class="card">
+          <h2>Langues</h2>
+          <div class="pill">
+            <span>Arabe — Maternelle</span>
+            <span>Français — Bilingue</span>
+            <span>Anglais — Professionnel</span>
+          </div>
+        </section>
+      </aside>
+
+      <!-- Colonne droite -->
+      <section class="grid-2">
+        <section id="experiences" class="card">
+          <h2>Expériences Professionnelles</h2>
+          <div class="timeline">
+            <div class="item">
+              <div class="role">Consultant Technico‑Fonctionnel</div>
+              <div class="where">DXC Technology — 06/2019 – Présent</div>
+              <ul class="list">
+                <li>TMA & gestion des incidents sur Graphtalk AIA</li>
+                <li>Études d’opportunité et d’impact, conception d’architectures applicatives</li>
+                <li>Développement & paramétrage AIA, correction d’anomalies, interfaçage via Gtmonitor</li>
+                <li>Automatisation des tests (Selenium, Virtuoso, Postman), intégration continue (CI/CD)</li>
+                <li>Montées de version AIA, optimisation des performances, rapports</li>
+                <li>Projet : Cardif – P9 Épargne (maintenance évolutive, TNR automatisés)</li>
+              </ul>
+            </div>
+            <div class="item">
+              <div class="role">Ingénieur Études & Développement</div>
+              <div class="where">E‑Charlemagne — 10/2018 – 04/2019</div>
+              <ul class="list">
+                <li>Fonctionnalités ERP KONOSYS (ASP.NET, SQL Server)</li>
+                <li>Maintenance corrective/évolutive, optimisation SQL</li>
+                <li>Tests unitaires & intégration, revue de code, documentation</li>
+                <li>Formation des utilisateurs</li>
+              </ul>
+            </div>
+            <div class="item">
+              <div class="role">Agent Centre d’Appel</div>
+              <div class="where">Digital Works (SFR Telecom) — 01/2017 – 06/2018</div>
+              <ul class="list">
+                <li>Gestion des appels entrants & demandes clients</li>
+                <li>Suivi et résolution via CRM, optimisation du service</li>
+                <li>Formation des nouveaux agents</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section id="projets" class="card">
+          <h2>Projets Réalisés</h2>
+          <div class="timeline">
+            <div class="item">
+              <div class="role">Application de Gestion de Bibliothèque</div>
+              <div class="where">Java & MySQL</div>
+              <p>Application desktop pour gérer les prêts, interface Java Swing, reporting et authentification.</p>
+              <!--<img class="proj-img" src="https://picsum.photos/600/300?random=1" alt="Projet Bibliothèque"/>-->
+            </div>
+            <div class="item">
+              <div class="role">Site Web de Réservation de Voyages</div>
+              <div class="where">PHP & Bootstrap</div>
+              <p>Réservation de vols/hôtels, back‑office de gestion des offres et des utilisateurs.</p>
+              <!-- <img class="proj-img" src="https://picsum.photos/600/300?random=2" alt="Projet Voyage"/>-->
+            </div>
+            <div class="item">
+              <div class="role">Application Mobile de Fitness</div>
+              <div class="where">Kotlin & Firebase</div>
+              <p>Suivi d’entraînements, historique, partage des progrès, authentification Firebase.</p>
+               <!--<img class="proj-img" src="https://picsum.photos/600/300?random=3" alt="Projet Fitness"/>-->
+            </div>
+            <div class="item">
+              <div class="role">Dashboard de Suivi Financier</div>
+              <div class="where">React & Node.js</div>
+              <p>Tableau de bord interactif revenus/dépenses/investissements, base MongoDB.</p>
+               <!--<img class="proj-img" src="https://picsum.photos/600/300?random=4" alt="Projet Finance"/>-->
+            </div>
+            <div class="item">
+              <div class="role">Plateforme e‑commerce</div>
+              <div class="where">Django & PostgreSQL</div>
+              <p>Boutique en ligne, gestion des produits, panier et paiements sécurisés.</p>
+              <!-- <img class="proj-img" src="https://picsum.photos/600/300?random=5" alt="Projet e‑commerce"/>-->
+            </div>
+            <div class="item">
+              <div class="role">Application de Gestion RH</div>
+              <div class="where">C# & SQL Server</div>
+              <p>Gestion employés/absences/paie avec reporting intégré.</p>
+              <!-- <img class="proj-img" src="https://picsum.photos/600/300?random=6" alt="Projet RH"/>-->
+            </div>
+            <div class="item">
+              <div class="role">Application de Gestion Médicale</div>
+              <div class="where">Laravel & MySQL</div>
+              <p>Gestion des patients, rendez‑vous et prescriptions via un dashboard web.</p>
+              <!-- <img class="proj-img" src="https://picsum.photos/600/300?random=7" alt="Projet Médical"/>-->
+            </div>
+            <div class="item">
+              <div class="role">Maison Connectée IoT</div>
+              <div class="where">Python & Raspberry Pi</div>
+              <p>Contrôle d’éclairage et température via interface web locale.</p>
+              <!-- <img class="proj-img" src="https://picsum.photos/600/300?random=8" alt="Projet IoT"/>-->
+            </div>
+            <div class="item">
+              <div class="role">Gestion de Stock Temps Réel</div>
+              <div class="where">Angular & Firebase</div>
+              <p>Gestion des stocks, authentification et notifications en temps réel.</p>
+              <!-- <img class="proj-img" src="https://picsum.photos/600/300?random=9" alt="Projet Stock"/>-->
+            </div>
+            <div class="item">
+              <div class="role">Site Portfolio Personnel</div>
+              <div class="where">HTML, CSS, JavaScript</div>
+              <p>Site vitrine responsive pour présenter compétences et expériences.</p>
+             <!--  <img class="proj-img" src="https://picsum.photos/600/300?random=10" alt="Projet Portfolio"/>-->
+            </div>
+          </div>
+        </section>
+
+        <section id="formation" class="card">
+          <h2>Formation</h2>
+          <div class="cols">
+            <p><strong>2017</strong> · Diplôme Ingénierie Logicielle & Développement Web – ISGA Rabat</p>
+            <p><strong>2016</strong> · Master Développement Informatique & Systèmes distribués – Université de Lorraine</p>
+            <p><strong>2014</strong> · Technicien spécialisé Développement Informatique – Institut Allal Ben Abdallah</p>
+          </div>
+        </section>
+
+        <section id="certifs" class="card">
+          <h2>Certifications</h2>
+          <div class="pill">
+            <span>Big Data Developer</span>
+            <span>Scrum Foundation</span>
+            <span>ITIL v4</span>
+            <span>Virtuoso</span>
+          </div>
+        </section>
+
+        <section id="contact" class="card">
+          <h2>Contact</h2>
+          <p>N’hésitez pas à me contacter via les canaux suivants :</p>
+          <ul class="list">
+            <li><i class="fa-solid fa-envelope"></i> <a href="mailto:benthamisoufiane1986@gmail.com">benthamisoufiane1986@gmail.com</a></li>
+            <li><i class="fa-solid fa-phone"></i> <a href="tel:+212613478423">+212 6 13 47 84 23</a></li>
+            <li><i class="fa-brands fa-linkedin"></i> <a href="https://linkedin.com/in/soufiane-benthami" target="_blank">linkedin.com/in/soufiane-benthami</a></li>
+          </ul>
+        </section>
+      </section>
+    </main>
+
+    <footer>
+      <p>Benthami Soufiane — Portfolio</p>
+    </footer>
+  </div>
+
+  <script>
+    // Fallback pour l'aperçu : forcer l'ouverture du mailto
+    (function(){
+      const link = document.getElementById('emailLink');
+      if(!link) return;
+      const url = link.getAttribute('href');
+      link.addEventListener('click', function(e){ e.preventDefault(); try { window.location.href = url; } catch(_) {} });
+    })();
+  </script>
+</body>
+</html>
