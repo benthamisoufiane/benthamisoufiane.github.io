@@ -34,7 +34,7 @@
     }
 
     /* --- HEADER FIXE --- */
-    header {
+    /*header {
       position: fixed;
       top: 0;
       left: 50%;
@@ -51,7 +51,49 @@
       box-shadow: var(--shadow);
       backdrop-filter: blur(8px);
        padding: 20px 28px; 
-    }
+    }*//* --- HEADER FIXE --- */
+/* --- HEADER FIXE --- */
+header {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.9);
+  border-bottom: 1px solid var(--border);
+  padding: 16px 24px;
+  width: 100%;
+  max-width: var(--maxw);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(8px);
+  padding: 20px 28px;
+}
+
+/* --- MENU --- */
+/* .menubar {
+  position: fixed;
+  top: 120px; Le menu se positionne juste après le header 
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
+  box-shadow: var(--shadow);
+  margin-bottom: 28px;
+  z-index: 999; Le menu reste en dessous du header */
+/* }*/
+
+/* --- CONTENU --- */
+/*.wrap {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 180px 20px 64px;  espace pour le header fixe et le menu 
+}*/
 
   .avatar img {
   width: 120px;          /* plus grand */
@@ -111,11 +153,12 @@
     }
 
     /* --- CONTENU --- */
-    .wrap {
+   /* .wrap {
+       
       max-width: var(--maxw);
       margin: 0 auto;
       padding: 140px 20px 64px; /* espace pour le header fixe */
-    }
+  /*  }*/
 
     /* --- MENU --- */
    /* .menubar {
@@ -146,9 +189,9 @@
       color: #fff;
     }*/
 /* --- MENU --- */
-.menubar {
+/*.menubar {
   position: fixed;
-  top: 0; /* Le menu reste en haut de la page */
+  top: 0; /* Le menu reste en haut de la page 
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: 999px;
@@ -158,8 +201,70 @@
   padding: 10px;
   box-shadow: var(--shadow);
   margin-bottom: 28px;
-  z-index: 1000; /* Assure-toi que le menu soit au-dessus du contenu */
+  z-index: 1000; Assure-toi que le menu soit au-dessus du contenu */
+/* }
+*/
+/*.menubar a {
+  text-decoration: none;
+  color: var(--primary);
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 999px;
+  transition: background 0.2s ease;
 }
+
+.menubar a:hover, .menubar a.active {
+  background: var(--accent);
+  color: #fff;
+}*/
+
+    /* --- SECTIONS --- 
+ main {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 24px;
+      position: absolute;
+    }*/
+   /*  main {
+  padding: 140px 20px 64px; /* Le padding en haut est suffisant pour éviter que le menu cache le contenu */
+  /*position: relative;
+}*/
+/* --- HEADER FIXE --- */
+header {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.9);
+  border-bottom: 1px solid var(--border);
+  padding: 16px 24px;
+  width: 100%;
+  max-width: var(--maxw);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(8px);
+  padding: 20px 28px;
+}
+
+/* --- MENU --- */
+.menubar {
+  position: fixed;
+  top: 180px; /* Augmenter la valeur de 'top' pour descendre le menu */
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
+  box-shadow: var(--shadow);
+  margin-bottom: 28px;
+  z-index: 999; /* Le menu reste en dessous du header */
+}
+
 
 .menubar a {
   text-decoration: none;
@@ -175,12 +280,21 @@
   color: #fff;
 }
 
-    /* --- SECTIONS --- */
-    main {
-      display: grid;
-      grid-template-columns: 320px 1fr;
-      gap: 24px;
-    }
+/* --- CONTENU --- */
+.wrap {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 180px 20px 64px; /* Ajout de l'espace pour le header et menu fixes */
+}
+
+/* --- MAIN --- */
+main {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 24px;
+  position: relative; /* Assurez-vous que le main ne soit pas couvert */
+}
+
 
     @media (max-width: 960px) {
       main { grid-template-columns: 1fr; }
