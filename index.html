@@ -118,7 +118,7 @@
     }
 
     /* --- MENU --- */
-    .menubar {
+   /* .menubar {
       position: relative;
       top: 100px;
       background: var(--card);
@@ -144,7 +144,36 @@
     .menubar a:hover, .menubar a.active {
       background: var(--accent);
       color: #fff;
-    }
+    }*/
+/* --- MENU --- */
+.menubar {
+  position: fixed;
+  top: 0; /* Le menu reste en haut de la page */
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
+  box-shadow: var(--shadow);
+  margin-bottom: 28px;
+  z-index: 1000; /* Assure-toi que le menu soit au-dessus du contenu */
+}
+
+.menubar a {
+  text-decoration: none;
+  color: var(--primary);
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 999px;
+  transition: background 0.2s ease;
+}
+
+.menubar a:hover, .menubar a.active {
+  background: var(--accent);
+  color: #fff;
+}
 
     /* --- SECTIONS --- */
     main {
